@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Career AI Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+🤖 CareerAI
+</div>
+
+<div class="menu">
+
+<button onclick="scrollToSection('dashboardSection')">
+Dashboard
+</button>
+
+<button onclick="openChat()">
+AI Chatbot
+</button>
+
+<button onclick="showProfile()">
+Profile
+</button>
+
+</div>
+
+</nav>
+
+
+<div class="container" id="homeSection">
+
+<h1>Welcome back! 👋</h1>
+
+<p>Let's build your career together.</p>
+
+
+<!-- Feature cards -->
+
+<div class="cards">
+
+<div class="card" id="resumeSection">
+
+<h3>Upload Resume</h3>
+
+<p>Get AI-powered analysis</p>
+
+<button id="uploadBtn">
+Upload
+</button>
+
+<input type="file"
+id="resumeFile"
+hidden>
+
+</div>
+
+
+<div class="card" id="skillSection">
+
+<h3>Skill Gap Analysis</h3>
+
+<p>Find missing skills</p>
+
+<input
+type="text"
+id="targetRole"
+placeholder="Enter target role">
+
+<button id="skillBtn">
+Analyze
+</button>
+
+</div>
+
+
+<div class="card" id="jobSection">
+
+<h3>Recommended Jobs</h3>
+
+<p>AI based suggestions</p>
+
+<button id="jobBtn">
+View Jobs
+</button>
+
+</div>
+
+
+<div class="card" id="interviewSection">
+
+<h3>Interview Prep</h3>
+
+<p>Generate questions</p>
+
+<button id="interviewBtn">
+Start
+</button>
+
+</div>
+
+</div>
+
+
+<!-- Dashboard cards -->
+
+<div class="dashboard" id="dashboardSection">
+
+<div class="dash-card">
+
+<h3>Total Skills</h3>
+
+<p id="totalSkills">
+0
+</p>
+
+</div>
+
+<div class="dash-card">
+
+<h3>Skill Match</h3>
+
+<p id="matchPercent">
+0%
+</p>
+
+</div>
+
+<div class="dash-card">
+
+<h3>Missing Skills</h3>
+
+<p id="missingCount">
+0
+</p>
+
+</div>
+
+<div class="dash-card">
+
+<h3>Recommended Jobs</h3>
+
+<p id="jobCount">
+0
+</p>
+
+</div>
+
+</div>
+
+
+<!-- Charts -->
+
+<div class="charts-container">
+
+<div class="chart-card">
+
+<h3>Skill Match</h3>
+
+<canvas id="skillChart"></canvas>
+
+</div>
+
+<div class="chart-card">
+
+<h3>Missing Skills</h3>
+
+<canvas id="missingChart"></canvas>
+
+</div>
+
+<div class="chart-card">
+
+<h3>Job Suitability</h3>
+
+<canvas id="jobChart"></canvas>
+
+</div>
+
+</div>
+
+
+<!-- Results -->
+
+<div id="resultBox">
+
+</div>
+
+</div>
+
+
+<!-- Chat icon -->
+
+<div class="chat-icon" id="chatIcon">
+🤖
+</div>
+
+
+<!-- Chatbot -->
+
+<div class="chatbot" id="chatbot">
+
+<div class="chat-header">
+
+CareerAI Assistant
+
+<span id="closeChat">
+✕
+</span>
+
+</div>
+
+<div class="chat-body" id="chatBody">
+
+<div class="bot">
+
+Hi 👋 How can I help you?
+
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input
+type="text"
+id="message"
+placeholder="Type message">
+
+<button id="sendBtn">
+➤
+</button>
+
+</div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body></html>
